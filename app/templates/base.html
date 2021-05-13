@@ -1,0 +1,133 @@
+<html>
+  <head>
+    <title>PostIt</title>
+  </head>
+  <body>
+    <center class="header"><h1>PostIt</h1></center>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    <ul>
+    {% for message in messages %}
+        <li>{{ message }} </li>
+    {% endfor %}
+    </ul>
+    {% endif %}
+    {% endwith %}
+    {% block content %}{% endblock %}
+  </body>
+<style>
+  * {
+  box-sizing: border-box;
+  }
+
+  .header {
+  padding: 10px;
+  text-align: center;
+  background: #1abc9c;
+  color: white;
+  font-size: 30px;
+}
+
+  input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+  }
+
+
+  input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  }
+
+  input[type=submit]:hover {
+  background-color: #45a049;
+  }
+
+  .col-25 {
+  float: left;
+  width: 25%;
+  margin-top: 6px;
+  }
+
+  .col-75 {
+  float: left;
+  width: 75%;
+  margin-top: 6px;
+  }
+
+  /* Clear floats after the columns */
+  .row:after {
+  content: "";
+  display: table;
+  clear: both;
+  }
+  .post_box {
+      background: #fff;
+      padding: 12px 0px 0px 12px;
+      margin-top: 0px;
+      margin-bottom: 8px;
+      border-top: 1px solid #f0f0f0;
+  }
+
+  .post_box-header {
+      padding-bottom: 12px;
+  }
+
+  .post_box-avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-size: 22px;
+      float: left;
+      margin-right: 16px;
+      border: 1px solid #fff;
+      box-shadow: 0px 0px 0px 2px #f00;
+  }
+
+  .post_box-avatar::after {
+      content:"";
+      display:block;
+  }
+
+  .post_box-name {
+      font-weight: bold;
+  }
+
+  .post_box-subtitle {
+      color: #777;
+  }
+
+  .post_box-body {
+      margin-top: 16px;
+      margin-bottom: 8px;
+  }
+
+  .post_box-options {
+      float: right;
+  }
+  .option-btn {
+      background: #f8f8f8;
+      border: none;
+      color: #2c3e50;
+      padding: 7px;
+      cursor: pointer;
+      font-size: 14px;
+      margin-left: 2px;
+      margin-right: 2px;
+      outline: none;
+      height: 42px;
+  }
+</style>
+</html>
